@@ -380,7 +380,7 @@
     <!-- JS Plugins  -->
     <script src="{{ asset("frontendassets/js/ajax-contact.js") }}"></script>
     <script src="{{ asset("frontendassets/js/owl.carousel.min.js") }}"></script>
-    <script src="{{ asset("frontendassets/js/main.js") }}js/switch.js"></script>
+    <script src="{{ asset("frontendassets/js/switch.js") }}"></script>
     
     <!-- JS main  -->
     <script src="{{ asset("frontendassets/js/main.js") }}"></script>
