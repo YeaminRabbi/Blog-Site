@@ -35,9 +35,14 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request;
-
         $blog =  new Blog();
+
+        if ($request->hasFile('image')) {
+            $imageName = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('images'), $imageName);
+            $blog->image =  $imageName;
+        }
+        
         $blog->title = $request->title;
         $blog->body = $request->body;
         $blog->save();

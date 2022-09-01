@@ -5313,23 +5313,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "createBlog",
   data: function data() {
     return {
-      blog: {
-        title: '',
-        body: ''
-      }
+      image: '',
+      title: '',
+      body: ''
     };
   },
   methods: {
     resetForm: function resetForm() {
       this.$refs["body"].value = "";
       this.$refs["title"].value = "";
+      this.$refs["image"].value = "";
     },
-    createBlog: function createBlog(blog) {
-      this.$store.dispatch('createBlog', blog);
+    onChange: function onChange(e) {
+      this.image = e.target.files[0];
+    },
+    createBlog: function createBlog() {
+      var config = {
+        headers: {
+          'content-type': 'multipart/form-data'
+        }
+      };
+      var blog = new FormData();
+      blog.append('image', this.image);
+      blog.append('title', this.title);
+      blog.append('body', this.body);
+      this.$store.dispatch('createBlog', blog, config);
       this.resetForm();
     }
   },
@@ -5362,9 +5375,12 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "col-md-6"
   }, [_c("form", {
+    attrs: {
+      enctype: "multipart/form-data"
+    },
     on: {
       submit: function submit($event) {
-        return _vm.createBlog(_vm.blog);
+        return _vm.createBlog();
       }
     }
   }, [_c("div", {
@@ -5373,8 +5389,8 @@ var render = function render() {
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: _vm.blog.title,
-      expression: "blog.title"
+      value: _vm.title,
+      expression: "title"
     }],
     ref: "title",
     staticClass: "form-control",
@@ -5382,14 +5398,24 @@ var render = function render() {
       type: "text"
     },
     domProps: {
-      value: _vm.blog.title
+      value: _vm.title
     },
     on: {
       input: function input($event) {
         if ($event.target.composing) return;
-
-        _vm.$set(_vm.blog, "title", $event.target.value);
+        _vm.title = $event.target.value;
       }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("label", [_vm._v("Image")]), _vm._v(" "), _c("input", {
+    ref: "image",
+    staticClass: "form-control",
+    attrs: {
+      type: "file"
+    },
+    on: {
+      change: _vm.onChange
     }
   })]), _vm._v(" "), _c("div", {
     staticClass: "form-group"
@@ -5397,24 +5423,23 @@ var render = function render() {
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: _vm.blog.body,
-      expression: "blog.body"
+      value: _vm.body,
+      expression: "body"
     }],
     ref: "body",
-    staticClass: "form-control ckeditor",
+    staticClass: "form-control",
     attrs: {
       name: "body",
       cols: "30",
       rows: "10"
     },
     domProps: {
-      value: _vm.blog.body
+      value: _vm.body
     },
     on: {
       input: function input($event) {
         if ($event.target.composing) return;
-
-        _vm.$set(_vm.blog, "body", $event.target.value);
+        _vm.body = $event.target.value;
       }
     }
   })]), _vm._v(" "), _c("button", {
@@ -5425,7 +5450,7 @@ var render = function render() {
     on: {
       click: function click($event) {
         $event.preventDefault();
-        return _vm.createBlog(_vm.blog);
+        return _vm.createBlog();
       }
     }
   }, [_vm._v("Submit")])])])]);
@@ -5574,9 +5599,9 @@ __webpack_require__.r(__webpack_exports__);
 //     });
 // }
 var actions = {
-  createBlog: function createBlog(_ref, blog) {
+  createBlog: function createBlog(_ref, blog, config) {
     var commit = _ref.commit;
-    axios.post('http://127.0.0.1:8000/api/blogs', blog).then(function (res) {
+    axios.post('http://127.0.0.1:8000/api/blogs', blog, config).then(function (res) {
       console.log(res.data); // commit('CREATE_BLOG', res.data);
     })["catch"](function (err) {
       console.log(err);

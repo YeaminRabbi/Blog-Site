@@ -88,8 +88,8 @@
 
 
 let actions = {
-        createBlog({commit}, blog) {
-            axios.post('http://127.0.0.1:8000/api/blogs', blog)
+        createBlog({commit}, blog, config) {
+            axios.post('http://127.0.0.1:8000/api/blogs', blog, config)
                 .then(res => {
                     console.log(res.data);
                     
