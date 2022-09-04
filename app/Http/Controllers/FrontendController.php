@@ -10,4 +10,9 @@ class FrontendController extends Controller
     {
         return view('frontend.home.index');
     }
+
+    public function blogList()
+    {
+        return view('frontend.home.index');
+    }
 }

@@ -85,8 +85,26 @@
 //     });
     
 // }
+// export const getStudents = ({commit}, payload) => {
+//      let url = `/get-studentsdata`;
 
+     
+//       axios.post(url, payload)
+//       .then(res => {
+//             commit('setTableData', res.data);
+//         });
+// }
+// export const getBlogs = ({commit}, payload) => {
+//      let url = `http://127.0.0.1:8000/api/blogs`;
 
+     
+//       axios.get(url, payload)
+//       .then(res => {
+//             console.log(res.data);
+
+//             // commit('blogData', res.data);
+//         });
+// }
 let actions = {
         createBlog({commit}, blog, config) {
             axios.post('http://127.0.0.1:8000/api/blogs', blog, config)
@@ -103,6 +121,7 @@ let actions = {
             axios.get('/api/blogs')
                 .then(res => {
                     commit('FETCH_BLOGS', res.data)
+                    console.log(res.data);
                 }).catch(err => {
                 console.log(err)
             })

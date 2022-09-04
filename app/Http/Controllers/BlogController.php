@@ -14,7 +14,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        return 'none';
+        return Blog::orderBy('id', 'ASC')->get();
     }
 
     /**
