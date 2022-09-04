@@ -12,7 +12,8 @@
                 </div>
                 <div class="form-group">
                     <label>Detais</label>
-                   <textarea v-model="body" name="body"  class="form-control" cols="30" rows="10" ref="body" ></textarea>
+                    <ckeditor :editor="editor" v-model="body" :config="editorConfig" value="" ref="body"></ckeditor>
+                   <!-- <textarea v-model="body" name="body"  class="form-control" cols="30" rows="10" ref="body" ></textarea> -->
                 </div>
               
                 <button type="submit" @click.prevent="createBlog()" class="btn btn-primary">Submit</button>
@@ -23,21 +24,27 @@
 
 
 <script>
-    import {ref} from 'vue'
+    import {ref} from 'vue';
+     import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
         export default {
             name: "createBlog",
             data() {
                 return {
                     image: '',
                     title: '',
-                    body: ''
+
+                    editor: ClassicEditor,
+                    body: '',
+                    editorConfig: {
+                        // The configuration of the editor.
+                    }
                 }
             },
             methods: {
                 resetForm() {
-                    this.$refs["body"].value = "";
                     this.$refs["title"].value = "";
                     this.$refs["image"].value = "";
+                    // this.$refs["body"].value = "Content";
                 },
                 onChange(e){
                      this.image = e.target.files[0];
