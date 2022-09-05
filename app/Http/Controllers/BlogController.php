@@ -14,7 +14,13 @@ class BlogController extends Controller
      */
     public function index()
     {
-        return Blog::orderBy('id', 'ASC')->get();
+        return Blog::orderBy('id', 'ASC')->get()->map(function ($item, $key) {
+            $item['published_at'] = date('d M, Y', strtotime($item->created_at)); 
+             $item->image = url('/images/'.$item->image);
+             $item['author_image'] = url('frontendassets/img/author/author.jpg');
+             return $item;
+        });
+ 
     }
 
     /**

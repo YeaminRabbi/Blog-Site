@@ -5550,7 +5550,18 @@ var render = function render() {
       staticClass: "col-lg-4 col-md-6"
     }, [_c("div", {
       staticClass: "post-card"
-    }, [_vm._m(0, true), _vm._v(" "), _c("div", {
+    }, [_c("div", {
+      staticClass: "post-card-image"
+    }, [_c("a", {
+      attrs: {
+        href: ""
+      }
+    }, [_c("img", {
+      attrs: {
+        src: blog.image,
+        alt: "IMG"
+      }
+    })])]), _vm._v(" "), _c("div", {
       staticClass: "post-card-content"
     }, [_c("a", {
       staticClass: "categorie",
@@ -5563,53 +5574,32 @@ var render = function render() {
       }
     }, [_vm._v(_vm._s(blog.title))])]), _vm._v(" "), _c("p", {
       domProps: {
-        innerHTML: _vm._s(blog.body)
+        innerHTML: _vm._s(blog.body.substring(0, 80) + "...")
       }
     }), _vm._v(" "), _c("div", {
       staticClass: "post-card-info"
     }, [_c("ul", {
       staticClass: "list-inline"
-    }, [_vm._m(1, true), _vm._v(" "), _c("li", [blog.user_id === 1 ? _c("a", {
+    }, [_c("li", [_c("a", {
+      attrs: {
+        href: "author.html"
+      }
+    }, [_c("img", {
+      attrs: {
+        src: blog.author_image,
+        alt: ""
+      }
+    })])]), _vm._v(" "), _c("li", [blog.user_id === 1 ? _c("a", {
       attrs: {
         href: "author.html"
       }
     }, [_vm._v("Author")]) : _vm._e()]), _vm._v(" "), _c("li", {
       staticClass: "dot"
-    }), _vm._v(" "), _c("li", [_vm._v(_vm._s(blog.created_at))])])])])])]);
+    }), _vm._v(" "), _c("li", [_vm._v(_vm._s(blog.published_at))])])])])])]);
   }), 0);
 };
 
-var staticRenderFns = [function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "post-card-image"
-  }, [_c("a", {
-    attrs: {
-      href: "post-default.html"
-    }
-  }, [_c("img", {
-    attrs: {
-      src: "",
-      alt: ""
-    }
-  })])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("li", [_c("a", {
-    attrs: {
-      href: "author.html"
-    }
-  }, [_c("img", {
-    attrs: {
-      src: "",
-      alt: ""
-    }
-  })])]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 

@@ -5,29 +5,31 @@
                
                 <div class="post-card">
                     <div class="post-card-image">
-                        <a href="post-default.html">
-                            <img  src="" alt="">
+                        <a href="">
+                            <img :src="blog.image" alt="IMG">
                         </a>
                     </div>
                     <div class="post-card-content">
                         <a href="blog-grid.html" class="categorie">Livestyle</a>
                         <h5>
-                            <a href="post-default.html">{{ blog.title }}</a>
+                            <a href="post-default.html">{{ blog.title  }}</a>
                         </h5>
-                        <p v-html="blog.body">
+                        
+
+                        <p v-html="blog.body.substring(0,80)+'...'">
                         </p>
                         <div class="post-card-info">
                             <ul class="list-inline">
                                 <li>
                                     <a href="author.html">
-                                        <img src="" alt="">
+                                        <img :src="blog.author_image" alt="">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="author.html" v-if="blog.user_id === 1">Author</a>
                                 </li>
                                 <li class="dot"></li>
-                                <li>{{ blog.created_at  }}</li>
+                                <li>{{ blog.published_at  }}</li>
                             </ul>
                         </div>
                     </div>
