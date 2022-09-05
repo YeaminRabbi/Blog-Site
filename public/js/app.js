@@ -5428,9 +5428,52 @@ __webpack_require__.r(__webpack_exports__);
   computed: {},
   methods: {
     gotoBlog: function gotoBlog(blogid) {
-      console.log(blogid);
-      window.location.href = "/blog/view/" + blogid;
+      //console.log(blogid);
+      window.location.href = "/blog/view/id=" + blogid;
     }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/BlogViewComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/BlogViewComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: 'blog-view-component',
+  data: function data() {
+    return {
+      blog: []
+    };
+  },
+  mounted: function mounted() {
+    // var data = this.$route.params.id;
+    // console.log($route.params.id);
+    var currentUrl = window.location.pathname;
+    console.log(currentUrl); // this.$store.dispatch('fetchBlogs');
+    // axios.get('/api/blogs')
+    //     .then(res => {
+    //         this.blogs= res.data;
+    //         console.log(res.data);
+    //     }).catch(err => {
+    //     console.log(err)
+    // })
+  },
+  computed: {},
+  methods: {// gotoBlog(blogid)
+    // {
+    //     console.log(blogid);
+    //      window.location.href = "/blog/view/" + blogid;
+    // }
   }
 });
 
@@ -5668,6 +5711,320 @@ render._withStripped = true;
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/BlogViewComponent.vue?vue&type=template&id=56cf557b&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/BlogViewComponent.vue?vue&type=template&id=56cf557b& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function render() {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _vm._m(0);
+};
+
+var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "col-lg-8 mb-20"
+  }, [_c("div", {
+    staticClass: "post-single"
+  }, [_c("div", {
+    staticClass: "post-single-image"
+  }, [_c("img", {
+    attrs: {
+      src: "",
+      alt: ""
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "post-single-content"
+  }, [_c("a", {
+    staticClass: "categorie",
+    attrs: {
+      href: "blog-grid.html"
+    }
+  }, [_vm._v("travel")]), _vm._v(" "), _c("h4"), _vm._v(" "), _c("div", {
+    staticClass: "post-single-info"
+  }, [_c("ul", {
+    staticClass: "list-inline"
+  }, [_c("li", [_c("a", {
+    attrs: {
+      href: "author.html"
+    }
+  }, [_c("img", {
+    attrs: {
+      src: "",
+      alt: ""
+    }
+  })])]), _vm._v(" "), _c("li", [_c("a", {
+    attrs: {
+      href: "author.html"
+    }
+  }, [_vm._v("David Smith")])]), _vm._v(" "), _c("li", {
+    staticClass: "dot"
+  }), _vm._v(" "), _c("li", [_vm._v("January 15, 2021")]), _vm._v(" "), _c("li", {
+    staticClass: "dot"
+  }), _vm._v(" "), _c("li", [_vm._v("3 comments")])])])]), _vm._v(" "), _c("div", {
+    staticClass: "post-single-body"
+  }, [_c("p", [_vm._v("\n                Its sometimes her behaviour are contented. Do listening am eagerness oh objection collected.\n                Together gay feelings continue\n                juvenile had off Unknown may service\n                subject her letters one bed. Child years noise ye in forty. Loud in this in both\n                hold. My entrance me is disposal bachelor remember relation\n            ")]), _vm._v(" "), _c("h5", [_vm._v(" 1 - Pick a sustainable travel destination ")]), _vm._v(" "), _c("p", [_vm._v("\n                Oh acceptance apartments up sympathize astonished delightful. Waiting him new lasting towards.\n                Continuing melancholy especially\n                so to. Me unpleasing impossible in attachment announcing so astonished. What ask leaf may nor upon\n                door. Tended remain\n                my do stairs. Oh smiling amiable am so visited cordial in offices hearted.\n            ")]), _vm._v(" "), _c("p", [_vm._v("\n                Oh acceptance apartments up sympathize astonished delightful. Waiting him new lasting towards.\n                Continuing melancholy especially\n                so to. Me unpleasing impossible in attachment announcing so astonished. What ask leaf may nor upon\n                door. Tended remain\n                my do stairs. Oh smiling amiable am so visited cordial in offices hearted.\n            ")]), _vm._v(" "), _c("p", [_vm._v(" Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure\n                dolor in reprehenderit\n                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat\n                non proident, sunt\n                in culpa qui officia\n                deserunt mollit anim id est laborum.\n            ")]), _vm._v(" "), _c("h5", [_vm._v("2 - Research before booking")]), _vm._v(" "), _c("p", [_vm._v("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore\n                et dolore magna aliqua.\n                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n                consequat. Duis aute\n                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n                Excepteur sint occaecat\n                cupidatat non proident.\n            ")]), _vm._v(" "), _c("div", {
+    staticClass: "quote"
+  }, [_c("div", [_c("i", {
+    staticClass: "icon_quotations_alt"
+  })]), _vm._v(" "), _c("p", [_vm._v("\n                    The man who goes alone can start today; but he who\n                    travels with another must wait till that other is ready.\n                ")]), _vm._v(" "), _c("small", [_vm._v("Henry David Thoreau.")])]), _vm._v(" "), _c("p", [_vm._v("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore\n                et dolore magna aliqua.\n                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n                consequat. Duis aute\n                irure dolor Unknown may service in reprehenderit in voluptate velit esse cillum dolore eu fugiat\n                nulla pariatur. Excepteur sint occaecat\n                cupidatat non proident.\n            ")]), _vm._v(" "), _c("h5", [_vm._v("3 - Pack light , Easy Sustainable Travel Tip")]), _vm._v(" "), _c("p", [_vm._v("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore\n                et dolore magna aliqua.\n                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n                consequat. Duis aute\n                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n                Excepteur sint occaecat\n                cupidatat non proident.\n                >sunt in culpa qui officia deserunt mollit anim id e st laborum.Lorem ipsum dolor sit amet,\n                consectetur adipiscing elit, sed\n                do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam.\n            ")]), _vm._v(" "), _c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-md-6"
+  }, [_c("div", {
+    staticClass: "image"
+  }, [_c("img", {
+    attrs: {
+      src: "",
+      alt: ""
+    }
+  }), _vm._v(" "), _c("p", [_vm._v("Caption can be used to add info")])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-6"
+  }, [_c("div", {
+    staticClass: "image"
+  }, [_c("img", {
+    attrs: {
+      src: "",
+      alt: ""
+    }
+  }), _vm._v(" "), _c("p", [_vm._v("Caption can be used to add info")])])])]), _vm._v(" "), _c("p", [_vm._v("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore\n                et dolore magna aliqua.\n                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n                consequat. Duis aute\n                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n                Excepteur sint occaecat\n                cupidatat non proident.\n            ")]), _vm._v(" "), _c("h5", [_vm._v("4 - Be respectful of the environment")]), _vm._v(" "), _c("p", [_vm._v("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore\n                et dolore magna aliqua.\n\n            ")]), _vm._v(" "), _c("ul", {
+    staticClass: "list"
+  }, [_c("li", [_vm._v("Be respectful of the environment ")]), _vm._v(" "), _c("li", [_vm._v("Pick a sustainable travel destination instead of a popular one")]), _vm._v(" "), _c("li", [_vm._v("Research before booking")]), _vm._v(" "), _c("li", [_vm._v("Pack light , Easy Sustainable Travel Tip")]), _vm._v(" "), _c("li", [_vm._v("Be respectful of the environment")])]), _vm._v(" "), _c("p", [_vm._v("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore\n                et dolore magna aliqua.\n                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n                consequat. Duis aute\n                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n            ")])]), _vm._v(" "), _c("div", {
+    staticClass: "post-single-footer"
+  }, [_c("div", {
+    staticClass: "tags"
+  }, [_c("ul", {
+    staticClass: "list-inline"
+  }, [_c("li", [_c("a", {
+    attrs: {
+      href: "blog-grid.html"
+    }
+  }, [_vm._v("Travel")])]), _vm._v(" "), _c("li", [_c("a", {
+    attrs: {
+      href: "blog-grid.html"
+    }
+  }, [_vm._v("Nature")])]), _vm._v(" "), _c("li", [_c("a", {
+    attrs: {
+      href: "blog-grid.html"
+    }
+  }, [_vm._v("tips")])]), _vm._v(" "), _c("li", [_c("a", {
+    attrs: {
+      href: "blog-grid.html"
+    }
+  }, [_vm._v("forest")])]), _vm._v(" "), _c("li", [_c("a", {
+    attrs: {
+      href: "blog-grid.html"
+    }
+  }, [_vm._v("beach")])])])]), _vm._v(" "), _c("div", {
+    staticClass: "social-media"
+  }, [_c("ul", {
+    staticClass: "list-inline"
+  }, [_c("li", [_c("a", {
+    staticClass: "color-facebook",
+    attrs: {
+      href: "#"
+    }
+  }, [_c("i", {
+    staticClass: "fab fa-facebook"
+  })])]), _vm._v(" "), _c("li", [_c("a", {
+    staticClass: "color-instagram",
+    attrs: {
+      href: "#"
+    }
+  }, [_c("i", {
+    staticClass: "fab fa-instagram"
+  })])]), _vm._v(" "), _c("li", [_c("a", {
+    staticClass: "color-twitter",
+    attrs: {
+      href: "#"
+    }
+  }, [_c("i", {
+    staticClass: "fab fa-twitter"
+  })])]), _vm._v(" "), _c("li", [_c("a", {
+    staticClass: "color-youtube",
+    attrs: {
+      href: "#"
+    }
+  }, [_c("i", {
+    staticClass: "fab fa-youtube"
+  })])]), _vm._v(" "), _c("li", [_c("a", {
+    staticClass: "color-pinterest",
+    attrs: {
+      href: "#"
+    }
+  }, [_c("i", {
+    staticClass: "fab fa-pinterest"
+  })])])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "widget mb-50"
+  }, [_c("div", {
+    staticClass: "title"
+  }, [_c("h5", [_vm._v("3 Comments")])]), _vm._v(" "), _c("ul", {
+    staticClass: "widget-comments"
+  }, [_c("li", {
+    staticClass: "comment-item"
+  }, [_c("img", {
+    attrs: {
+      src: "assets/img/user/1.jpg",
+      alt: ""
+    }
+  }), _vm._v(" "), _c("div", {
+    staticClass: "content"
+  }, [_c("ul", {
+    staticClass: "info list-inline"
+  }, [_c("li", [_vm._v("Mohammed Ali")]), _vm._v(" "), _c("li", {
+    staticClass: "dot"
+  }), _vm._v(" "), _c("li", [_vm._v(" January 15, 2021")])]), _vm._v(" "), _c("p", [_vm._v("Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus at doloremque adipisci\n                        eum placeat\n                        quod non fugiat aliquid sit similique!\n                    ")]), _vm._v(" "), _c("div", [_c("a", {
+    staticClass: "link",
+    attrs: {
+      href: "#"
+    }
+  }, [_c("i", {
+    staticClass: "arrow_back"
+  }), _vm._v(" Reply")])])])]), _vm._v(" "), _c("li", {
+    staticClass: "comment-item"
+  }, [_c("img", {
+    attrs: {
+      src: "assets/img/author/1.jpg",
+      alt: ""
+    }
+  }), _vm._v(" "), _c("div", {
+    staticClass: "content"
+  }, [_c("ul", {
+    staticClass: "info list-inline"
+  }, [_c("li", [_vm._v("Simon Albert")]), _vm._v(" "), _c("li", {
+    staticClass: "dot"
+  }), _vm._v(" "), _c("li", [_vm._v(" January 15, 2021")])]), _vm._v(" "), _c("p", [_vm._v("Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus at doloremque adipisci\n                        eum placeat quod non\n                        fugiat aliquid sit similique!\n                    ")]), _vm._v(" "), _c("div", [_c("a", {
+    staticClass: "link",
+    attrs: {
+      href: "#"
+    }
+  }, [_c("i", {
+    staticClass: "arrow_back"
+  }), _vm._v(" Reply")])])])]), _vm._v(" "), _c("li", {
+    staticClass: "comment-item"
+  }, [_c("img", {
+    attrs: {
+      src: "assets/img/user/2.jpg",
+      alt: ""
+    }
+  }), _vm._v(" "), _c("div", {
+    staticClass: "content"
+  }, [_c("ul", {
+    staticClass: "info list-inline"
+  }, [_c("li", [_vm._v("Adam bobly")]), _vm._v(" "), _c("li", {
+    staticClass: "dot"
+  }), _vm._v(" "), _c("li", [_vm._v(" January 15, 2021")])]), _vm._v(" "), _c("p", [_vm._v("Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus at doloremque adipisci\n                        eum placeat\n                        quod non fugiat aliquid sit similique!\n                    ")]), _vm._v(" "), _c("div", [_c("a", {
+    staticClass: "link",
+    attrs: {
+      href: "#"
+    }
+  }, [_c("i", {
+    staticClass: "arrow_back"
+  }), _vm._v(" Reply")])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "title"
+  }, [_c("h5", [_vm._v("Leave a Reply")])]), _vm._v(" "), _c("form", {
+    staticClass: "widget-form",
+    attrs: {
+      action: "#",
+      method: "POST",
+      id: "main_contact_form"
+    }
+  }, [_c("p", [_vm._v("Your email adress will not be published ,Requied fileds are marked*.")]), _vm._v(" "), _c("div", {
+    staticClass: "alert alert-success contact_msg",
+    staticStyle: {
+      display: "none"
+    },
+    attrs: {
+      role: "alert"
+    }
+  }, [_vm._v("\n                Your message was sent successfully.\n            ")]), _vm._v(" "), _c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-md-12"
+  }, [_c("div", {
+    staticClass: "form-group"
+  }, [_c("textarea", {
+    staticClass: "form-control",
+    attrs: {
+      name: "message",
+      id: "message",
+      cols: "30",
+      rows: "5",
+      placeholder: "Message*",
+      required: "required"
+    }
+  })])]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-6"
+  }, [_c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      name: "name",
+      id: "name",
+      placeholder: "Name*",
+      required: "required"
+    }
+  })])]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-6"
+  }, [_c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    staticClass: "form-control",
+    attrs: {
+      type: "email",
+      name: "email",
+      id: "email",
+      placeholder: "Email*",
+      required: "required"
+    }
+  })])]), _vm._v(" "), _c("div", {
+    staticClass: "col-12 mb-20"
+  }, [_c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      name: "website",
+      id: "website",
+      placeholder: "website"
+    }
+  })]), _vm._v(" "), _c("label", [_c("input", {
+    attrs: {
+      name: "name",
+      type: "checkbox",
+      value: "1",
+      required: "required"
+    }
+  }), _vm._v(" "), _c("span", [_vm._v("save my name , email and website in this browser for the next time I comment.")])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-12"
+  }, [_c("button", {
+    staticClass: "btn-custom",
+    attrs: {
+      type: "submit",
+      name: "submit"
+    }
+  }, [_vm._v("\n                        Post Comment\n                    ")])])])])])]);
+}];
+render._withStripped = true;
+
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -5689,6 +6046,7 @@ window.Vue = (__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js
 vue__WEBPACK_IMPORTED_MODULE_2__["default"].use((_ckeditor_ckeditor5_vue2__WEBPACK_IMPORTED_MODULE_1___default()));
 vue__WEBPACK_IMPORTED_MODULE_2__["default"].component('blog-form-component', (__webpack_require__(/*! ./components/BlogFormComponent.vue */ "./resources/js/components/BlogFormComponent.vue")["default"]));
 vue__WEBPACK_IMPORTED_MODULE_2__["default"].component('blog-list-component', (__webpack_require__(/*! ./components/BlogListComponent.vue */ "./resources/js/components/BlogListComponent.vue")["default"]));
+vue__WEBPACK_IMPORTED_MODULE_2__["default"].component('blog-view-component', (__webpack_require__(/*! ./components/BlogViewComponent.vue */ "./resources/js/components/BlogViewComponent.vue")["default"]));
 var app = new vue__WEBPACK_IMPORTED_MODULE_2__["default"]({
   store: _store_index__WEBPACK_IMPORTED_MODULE_0__["default"],
   el: '#vue-app'
@@ -28684,6 +29042,45 @@ component.options.__file = "resources/js/components/BlogListComponent.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/BlogViewComponent.vue":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/BlogViewComponent.vue ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _BlogViewComponent_vue_vue_type_template_id_56cf557b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BlogViewComponent.vue?vue&type=template&id=56cf557b& */ "./resources/js/components/BlogViewComponent.vue?vue&type=template&id=56cf557b&");
+/* harmony import */ var _BlogViewComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BlogViewComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/BlogViewComponent.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _BlogViewComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _BlogViewComponent_vue_vue_type_template_id_56cf557b___WEBPACK_IMPORTED_MODULE_0__.render,
+  _BlogViewComponent_vue_vue_type_template_id_56cf557b___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/BlogViewComponent.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/BlogFormComponent.vue?vue&type=script&lang=js&":
 /*!********************************************************************************!*\
   !*** ./resources/js/components/BlogFormComponent.vue?vue&type=script&lang=js& ***!
@@ -28713,6 +29110,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BlogListComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./BlogListComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/BlogListComponent.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BlogListComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/BlogViewComponent.vue?vue&type=script&lang=js&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/BlogViewComponent.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BlogViewComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./BlogViewComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/BlogViewComponent.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BlogViewComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -28746,6 +29159,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_BlogListComponent_vue_vue_type_template_id_74931c22___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_BlogListComponent_vue_vue_type_template_id_74931c22___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./BlogListComponent.vue?vue&type=template&id=74931c22& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/BlogListComponent.vue?vue&type=template&id=74931c22&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/BlogViewComponent.vue?vue&type=template&id=56cf557b&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/BlogViewComponent.vue?vue&type=template&id=56cf557b& ***!
+  \**************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_BlogViewComponent_vue_vue_type_template_id_56cf557b___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_BlogViewComponent_vue_vue_type_template_id_56cf557b___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_BlogViewComponent_vue_vue_type_template_id_56cf557b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./BlogViewComponent.vue?vue&type=template&id=56cf557b& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/BlogViewComponent.vue?vue&type=template&id=56cf557b&");
 
 
 /***/ }),

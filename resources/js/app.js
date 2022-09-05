@@ -11,6 +11,7 @@ Vue.use( CKEditor );
 
 Vue.component('blog-form-component', require('./components/BlogFormComponent.vue').default);
 Vue.component('blog-list-component', require('./components/BlogListComponent.vue').default);
+Vue.component('blog-view-component', require('./components/BlogViewComponent.vue').default);
 
 const app = new Vue({
     store,

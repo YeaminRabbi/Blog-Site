@@ -19,6 +19,6 @@ class FrontendController extends Controller
 
     public function blogView(Blog $blog)
     {
-        return $blog;
+        return view('frontend.blogView.view',compact('blog'));
     }
 }

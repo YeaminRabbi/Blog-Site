@@ -14,8 +14,6 @@
                         <h5>
                             <a @click="gotoBlog(blog.id)">{{ blog.title.substring(0,60)+'...'  }}</a>
                         </h5>
-                        
-
                         <p v-html="blog.body.substring(0,80)+'...'" >
                         </p>
                         <div class="post-card-info">
@@ -71,8 +69,8 @@
         methods: {
             gotoBlog(blogid)
             {
-                console.log(blogid);
-                 window.location.href = "/blog/view/" + blogid;
+                //console.log(blogid);
+                window.location.href = "/blog/view/id=" + blogid;
             }
         }
     }
