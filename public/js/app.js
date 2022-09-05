@@ -5355,6 +5355,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       image: '',
       title: '',
+      category: '',
       editor: (_ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0___default()),
       body: '',
       editorConfig: {// The configuration of the editor.
@@ -5364,7 +5365,8 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     resetForm: function resetForm() {
       this.$refs["title"].value = "";
-      this.$refs["image"].value = ""; // this.$refs["body"].value = "Content";
+      this.$refs["image"].value = "";
+      this.$refs["category"].value = ""; // this.$refs["body"].value = "Content";
     },
     onChange: function onChange(e) {
       this.image = e.target.files[0];
@@ -5379,8 +5381,10 @@ __webpack_require__.r(__webpack_exports__);
       blog.append('image', this.image);
       blog.append('title', this.title);
       blog.append('body', this.body);
-      this.$store.dispatch('createBlog', blog, config);
-      this.resetForm();
+      blog.append('category', this.category);
+      this.$store.dispatch('createBlog', blog, config); // this.resetForm();
+
+      window.location.reload();
     }
   },
   computed: {// isValid() {
@@ -5422,7 +5426,12 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   computed: {},
-  methods: {}
+  methods: {
+    gotoBlog: function gotoBlog(blogid) {
+      console.log(blogid);
+      window.location.href = "/blog/view/" + blogid;
+    }
+  }
 });
 
 /***/ }),
@@ -5480,6 +5489,56 @@ var render = function render() {
       }
     }
   })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("label", [_vm._v("Category")]), _vm._v(" "), _c("select", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.category,
+      expression: "category"
+    }],
+    ref: "category",
+    staticClass: "form-control",
+    on: {
+      change: function change($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
+          return o.selected;
+        }).map(function (o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val;
+        });
+        _vm.category = $event.target.multiple ? $$selectedVal : $$selectedVal[0];
+      }
+    }
+  }, [_c("option", {
+    attrs: {
+      value: "fashion"
+    }
+  }, [_vm._v("fashion")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "entertainment"
+    }
+  }, [_vm._v("entertainment")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "sports"
+    }
+  }, [_vm._v("sports")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "technology"
+    }
+  }, [_vm._v("technology")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "business"
+    }
+  }, [_vm._v("business")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "youth"
+    }
+  }, [_vm._v("youth")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "society"
+    }
+  }, [_vm._v("society")])])]), _vm._v(" "), _c("div", {
     staticClass: "form-group"
   }, [_c("label", [_vm._v("Image")]), _vm._v(" "), _c("input", {
     ref: "image",
@@ -5553,8 +5612,10 @@ var render = function render() {
     }, [_c("div", {
       staticClass: "post-card-image"
     }, [_c("a", {
-      attrs: {
-        href: ""
+      on: {
+        click: function click($event) {
+          return _vm.gotoBlog(blog.id);
+        }
       }
     }, [_c("img", {
       attrs: {
@@ -5566,13 +5627,15 @@ var render = function render() {
     }, [_c("a", {
       staticClass: "categorie",
       attrs: {
-        href: "blog-grid.html"
+        href: "#"
       }
-    }, [_vm._v("Livestyle")]), _vm._v(" "), _c("h5", [_c("a", {
-      attrs: {
-        href: "post-default.html"
+    }, [_vm._v(_vm._s(blog.category))]), _vm._v(" "), _c("h5", [_c("a", {
+      on: {
+        click: function click($event) {
+          return _vm.gotoBlog(blog.id);
+        }
       }
-    }, [_vm._v(_vm._s(blog.title))])]), _vm._v(" "), _c("p", {
+    }, [_vm._v(_vm._s(blog.title.substring(0, 60) + "..."))])]), _vm._v(" "), _c("p", {
       domProps: {
         innerHTML: _vm._s(blog.body.substring(0, 80) + "...")
       }
@@ -5582,7 +5645,7 @@ var render = function render() {
       staticClass: "list-inline"
     }, [_c("li", [_c("a", {
       attrs: {
-        href: "author.html"
+        href: "#"
       }
     }, [_c("img", {
       attrs: {
@@ -5591,7 +5654,7 @@ var render = function render() {
       }
     })])]), _vm._v(" "), _c("li", [blog.user_id === 1 ? _c("a", {
       attrs: {
-        href: "author.html"
+        href: "#"
       }
     }, [_vm._v("Author")]) : _vm._e()]), _vm._v(" "), _c("li", {
       staticClass: "dot"

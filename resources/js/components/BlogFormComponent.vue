@@ -6,6 +6,19 @@
                     <label>Title</label>
                     <input type="text" class="form-control" v-model="title"  ref="title">
                 </div>
+                <div class="form-group">
+                     <label>Category</label>
+                    <select class="form-control" v-model="category" ref="category">
+                        
+                        <option value="fashion">fashion</option>
+                        <option value="entertainment">entertainment</option>
+                        <option value="sports">sports</option>
+                        <option value="technology">technology</option>
+                        <option value="business">business</option>
+                        <option value="youth">youth</option>
+                        <option value="society">society</option>
+                    </select>
+                </div>
                  <div class="form-group">
                     <label>Image</label>
                     <input type="file" class="form-control"  @change="onChange" ref="image">
@@ -32,7 +45,7 @@
                 return {
                     image: '',
                     title: '',
-
+                    category: '',
                     editor: ClassicEditor,
                     body: '',
                     editorConfig: {
@@ -44,6 +57,7 @@
                 resetForm() {
                     this.$refs["title"].value = "";
                     this.$refs["image"].value = "";
+                    this.$refs["category"].value = "";
                     // this.$refs["body"].value = "Content";
                 },
                 onChange(e){
@@ -61,9 +75,11 @@
                     blog.append('image', this.image);
                     blog.append('title', this.title);
                     blog.append('body', this.body); 
+                    blog.append('category', this.category); 
 
                     this.$store.dispatch('createBlog', blog, config);
-                    this.resetForm();
+                    // this.resetForm();
+                    window.location.reload();
                 }
             },
             computed: {
