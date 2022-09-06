@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row" id="vue-app">
-        <blog-view-component></blog-view-component>
+        <blog-view-component :id="{{ $id }}"></blog-view-component>
 
         <div class="col-lg-4 max-width">
             <!--widget-author-->

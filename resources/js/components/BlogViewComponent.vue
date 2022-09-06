@@ -3,138 +3,27 @@
         
         <div class="post-single">
             <div class="post-single-image">
-                <img src="" alt="">
+                <img :src="blog.image" alt="img">
             </div>
             <div class="post-single-content">
-                <a href="blog-grid.html" class="categorie">travel</a>
-                <h4></h4>
+                <a href="" class="categorie">{{ this.blog?.category  }}</a>
+                <h4> {{ this.blog?.title }}</h4>
                 <div class="post-single-info">
                     <ul class="list-inline">
-                        <li><a href="author.html"><img src=""
+                        <li><a href="#"><img :src="blog.author_image "
                                     alt=""></a></li>
-                        <li><a href="author.html">David Smith</a> </li>
+                        <li><a href="#" v-if="blog.user_id === 1">Author</a> </li>
                         <li class="dot"></li>
                         <li>January 15, 2021</li>
-                        <li class="dot"></li>
-                        <li>3 comments</li>
+                        <!-- <li class="dot"></li>
+                        <li>3 comments</li> -->
                     </ul>
                 </div>
             </div>
 
             <div class="post-single-body">
-                <p>
-                    Its sometimes her behaviour are contented. Do listening am eagerness oh objection collected.
-                    Together gay feelings continue
-                    juvenile had off Unknown may service
-                    subject her letters one bed. Child years noise ye in forty. Loud in this in both
-                    hold. My entrance me is disposal bachelor remember relation
-                </p>
-                <h5> 1 - Pick a sustainable travel destination </h5>
-
-                <p>
-                    Oh acceptance apartments up sympathize astonished delightful. Waiting him new lasting towards.
-                    Continuing melancholy especially
-                    so to. Me unpleasing impossible in attachment announcing so astonished. What ask leaf may nor upon
-                    door. Tended remain
-                    my do stairs. Oh smiling amiable am so visited cordial in offices hearted.
-                </p>
-                <p>
-                    Oh acceptance apartments up sympathize astonished delightful. Waiting him new lasting towards.
-                    Continuing melancholy especially
-                    so to. Me unpleasing impossible in attachment announcing so astonished. What ask leaf may nor upon
-                    door. Tended remain
-                    my do stairs. Oh smiling amiable am so visited cordial in offices hearted.
-                </p>
-                
-
-                <p> Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                    dolor in reprehenderit
-                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                    non proident, sunt
-                    in culpa qui officia
-                    deserunt mollit anim id est laborum.
-                </p>
-                <h5>2 - Research before booking</h5>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute
-                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    Excepteur sint occaecat
-                    cupidatat non proident.
-                </p>
-                <div class="quote">
-                    <div><i class="icon_quotations_alt"></i></div>
-                    <p>
-                        The man who goes alone can start today; but he who
-                        travels with another must wait till that other is ready.
-                    </p>
-                    <small>Henry David Thoreau.</small>
+                <div v-html="blog.body">
                 </div>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute
-                    irure dolor Unknown may service in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                    nulla pariatur. Excepteur sint occaecat
-                    cupidatat non proident.
-                </p>
-                <h5>3 - Pack light , Easy Sustainable Travel Tip</h5>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute
-                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    Excepteur sint occaecat
-                    cupidatat non proident.
-                    >sunt in culpa qui officia deserunt mollit anim id e st laborum.Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam.
-                </p>
-                <div class="row">
-                    <div class="col-md-6 ">
-                        <div class="image">
-                            <img src="" alt="">
-                            <p>Caption can be used to add info</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 ">
-                        <div class="image">
-                            <img src="" alt="">
-                            <p>Caption can be used to add info</p>
-                        </div>
-                    </div>
-                </div>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute
-                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    Excepteur sint occaecat
-                    cupidatat non proident.
-                </p>
-                <h5>4 - Be respectful of the environment</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua.
-
-                </p>
-                <ul class="list">
-                    <li>Be respectful of the environment </li>
-                    <li>Pick a sustainable travel destination instead of a popular one</li>
-                    <li>Research before booking</li>
-                    <li>Pack light , Easy Sustainable Travel Tip</li>
-                    <li>Be respectful of the environment</li>
-                </ul>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute
-                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                </p>
             </div>
 
             <div class="post-single-footer">
@@ -194,7 +83,7 @@
       
 
         <!--widget-comments-->
-        <div class="widget mb-50">
+        <!-- <div class="widget mb-50">
             <div class="title">
                 <h5>3 Comments</h5>
             </div>
@@ -300,7 +189,7 @@
                     </div>
                 </div>
             </form>
-        </div>
+        </div> -->
     </div>
 </template>
 
@@ -308,39 +197,38 @@
 
     import { mapGetters } from 'vuex';
     export default {
+
         name: 'blog-view-component',
         data() {
             return {
                 blog: []
             }
         },
-        
-        mounted() {
-          
-            // var data = this.$route.params.id;
-            // console.log($route.params.id);
-            var currentUrl = window.location.pathname;
+        props:{
+            id: Number
+        },
+        created() {
+                axios.get('/api/blogs/'+this.id)
+                    .then(res => {
+                        this.blog= res.data.data;
+                        // console.log(this.blog);
+                    }).catch(err => {
+                    console.log(err)
+                });
+            
 
-            console.log(currentUrl);
-            // this.$store.dispatch('fetchBlogs');
-            // axios.get('/api/blogs')
-            //     .then(res => {
-            //         this.blogs= res.data;
-            //         console.log(res.data);
-            //     }).catch(err => {
-            //     console.log(err)
-            // })
+        },
+
+        mounted() {
+            
+           
         },
         
         computed: {
             
         },
         methods: {
-            // gotoBlog(blogid)
-            // {
-            //     console.log(blogid);
-            //      window.location.href = "/blog/view/" + blogid;
-            // }
+            
         }
     }
 

@@ -70,7 +70,7 @@
             gotoBlog(blogid)
             {
                 //console.log(blogid);
-                window.location.href = "/blog/view/id=" + blogid;
+                window.location.href = "/blog/view/" + blogid;
             }
         }
     }

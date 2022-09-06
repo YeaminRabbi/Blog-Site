@@ -20,6 +20,6 @@ Route::get('/', [App\Http\Controllers\FrontendController::class, 'index'])->name
 Route::get('/home', [App\Http\Controllers\FrontendController::class, 'index']);
 
 Route::get('/blogs', [App\Http\Controllers\FrontendController::class, 'blogList']);
-Route::get('/blog/view/id={blog}', [App\Http\Controllers\FrontendController::class, 'blogView'])->name('blogView');
+Route::get('/blog/view/{blog}', [App\Http\Controllers\FrontendController::class, 'blogView'])->name('blogView');
 
 Route::get('/blog-create', [App\Http\Controllers\BackendController::class, 'blogCreate'])->name('blogCreate');
