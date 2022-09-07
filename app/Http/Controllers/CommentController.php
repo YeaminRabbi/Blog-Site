@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\Comment;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -57,7 +58,17 @@ class CommentController extends Controller
      */
     public function show($id)
     {
-        //
+       
+        return response()->json([
+            "comments" => Comment::where('blog_id', $id)->get()->map(function ($item, $key) {
+                        $item['published_at'] = date('d M, Y', strtotime($item->created_at));
+                        $item['author_image'] = url('frontendassets/img/author/author.jpg');
+                        return $item;
+                }),
+
+        ]);
+       
+
     }
 
     /**

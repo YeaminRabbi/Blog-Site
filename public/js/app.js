@@ -5453,7 +5453,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       blog: [],
-      commentResponse: [],
+      fetchedcomments: [],
       text: '',
       name: '',
       email: ''
@@ -5466,7 +5466,9 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     axios.get('/api/blogs/' + this.id).then(function (res) {
-      _this.blog = res.data.data; // console.log(this.blog);
+      _this.blog = res.data.data;
+
+      _this.getComments(_this.id);
     })["catch"](function (err) {
       console.log(err);
     });
@@ -5480,12 +5482,26 @@ __webpack_require__.r(__webpack_exports__);
       comment.name = this.name;
       comment.email = this.email;
       comment.blog_id = blog_id;
-      console.log(comment);
-      axios.post('http://127.0.0.1:8000/api/comments', comment).then(function (res) {
-        console.log(res.data);
+      axios.post('http://127.0.0.1:8000/api/comments', comment).then(function (res) {// console.log(res.data);
       })["catch"](function (err) {
         console.log(err.response.data);
       });
+      this.getComments(this.id);
+      this.resetForm();
+    },
+    getComments: function getComments(blog_id) {
+      var _this2 = this;
+
+      axios.get('http://127.0.0.1:8000/api/comments/' + blog_id).then(function (res) {
+        _this2.fetchedcomments = res.data;
+      })["catch"](function (err) {
+        console.log(err.response.data);
+      });
+    },
+    resetForm: function resetForm() {
+      this.name = '';
+      this.text = '';
+      this.email = '';
     }
   }
 });
@@ -5789,14 +5805,23 @@ var render = function render() {
     staticClass: "widget mb-50"
   }, [_vm._m(1), _vm._v(" "), _c("ul", {
     staticClass: "widget-comments"
-  }, [_c("li", {
-    staticClass: "comment-item"
-  }, [_c("img", {
-    attrs: {
-      src: _vm.blog.author_image,
-      alt: ""
-    }
-  }), _vm._v(" "), _vm._m(2)])]), _vm._v(" "), _vm._m(3), _vm._v(" "), _c("form", {
+  }, _vm._l(_vm.fetchedcomments.comments, function (comment) {
+    return _c("li", {
+      key: comment.id,
+      staticClass: "comment-item"
+    }, [_c("img", {
+      attrs: {
+        src: comment.author_image,
+        alt: ""
+      }
+    }), _vm._v(" "), _c("div", {
+      staticClass: "content"
+    }, [_c("ul", {
+      staticClass: "info list-inline"
+    }, [_c("li", [_vm._v(_vm._s(comment.name))]), _vm._v(" "), _c("li", {
+      staticClass: "dot"
+    }), _vm._v(" "), _c("li", [_vm._v(" " + _vm._s(comment.published_at))])]), _vm._v(" "), _c("p", [_vm._v(_vm._s(comment.text))]), _vm._v(" "), _vm._m(2, true)])]);
+  }), 0), _vm._v(" "), _vm._m(3), _vm._v(" "), _c("form", {
     staticClass: "widget-form",
     attrs: {
       action: "#",
@@ -5830,10 +5855,11 @@ var render = function render() {
       value: _vm.text,
       expression: "text"
     }],
+    ref: "text",
     staticClass: "form-control",
     attrs: {
       name: "message",
-      id: "message",
+      id: "CommentMessage",
       cols: "30",
       rows: "5",
       placeholder: "Message*",
@@ -5859,11 +5885,12 @@ var render = function render() {
       value: _vm.name,
       expression: "name"
     }],
+    ref: "name",
     staticClass: "form-control",
     attrs: {
       type: "text",
       name: "name",
-      id: "name",
+      id: "CommentName",
       placeholder: "Name*",
       required: "required"
     },
@@ -5887,11 +5914,12 @@ var render = function render() {
       value: _vm.email,
       expression: "email"
     }],
+    ref: "email",
     staticClass: "form-control",
     attrs: {
       type: "email",
       name: "email",
-      id: "email",
+      id: "CommentEmail",
       placeholder: "Email*"
     },
     domProps: {
@@ -6000,13 +6028,14 @@ var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", {
-    staticClass: "content"
-  }, [_c("ul", {
-    staticClass: "info list-inline"
-  }, [_c("li", [_vm._v("Mohammed Ali")]), _vm._v(" "), _c("li", {
-    staticClass: "dot"
-  }), _vm._v(" "), _c("li", [_vm._v(" January 15, 2021")])]), _vm._v(" "), _c("p", [_vm._v("Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus at doloremque adipisci\n                        eum placeat\n                        quod non fugiat aliquid sit similique!\n                    ")])]);
+  return _c("div", [_c("a", {
+    staticClass: "link",
+    attrs: {
+      href: "#"
+    }
+  }, [_c("i", {
+    staticClass: "arrow_back"
+  }), _vm._v(" Reply")])]);
 }, function () {
   var _vm = this,
       _c = _vm._self._c;

@@ -85,32 +85,37 @@
         <div class="widget mb-50">
             <div class="title">
                 <h5>3 Comments</h5>
+
+                
             </div>
             <ul class="widget-comments">
-                <li class="comment-item">
-                    <img :src="blog.author_image" alt="">
+                <li class="comment-item" v-for="comment in fetchedcomments.comments" :key="comment.id">
+                    <img :src="comment.author_image" alt="">
                     <div class="content">
                         <ul class="info list-inline">
-                            <li>Mohammed Ali</li>
+                            <li>{{ comment.name }}</li>
                             <li class="dot"></li>
-                            <li> January 15, 2021</li>
+                            <li> {{ comment.published_at }}</li>
                         </ul>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus at doloremque adipisci
-                            eum placeat
-                            quod non fugiat aliquid sit similique!
-                        </p>
-                        <!-- <div><a href="#" class="link"> <i class="arrow_back"></i> Reply</a></div> -->
+                        <p>{{comment.text}}</p>
+                        <div><a href="#" class="link"> <i class="arrow_back"></i> Reply</a></div>
                     </div>
                 </li>
-
+                
             </ul>
 
 
             <div class="title">
                 <h5>Leave a Comment</h5>
             </div>
-
-            <form @submit.prevent="addComment(blog.id)" class="widget-form" action="#" method="POST" id="main_contact_form">
+            <!-- {{ fetchedcomments }}
+            
+            
+            -->
+            
+            
+            <form @submit.prevent="addComment(blog.id)" class="widget-form" action="#" method="POST"
+                id="main_contact_form">
 
                 <p>Your email adress will not be published ,Requied fileds are marked*.</p>
                 <div class="alert alert-success contact_msg" style="display: none" role="alert">
@@ -119,19 +124,20 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <textarea name="message" id="message" cols="30" rows="5" class="form-control"
-                                placeholder="Message*" required="required" v-model="text"></textarea>
+                            <textarea name="message" id="CommentMessage" cols="30" rows="5" class="form-control"
+                                placeholder="Message*" required="required" v-model="text" ref="text"></textarea>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <input type="text" name="name" id="name" class="form-control" placeholder="Name*"
-                                required="required"  v-model="name">
+                            <input type="text" name="name" id="CommentName" class="form-control" placeholder="Name*"
+                                required="required" v-model="name" ref="name">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <input type="email" name="email" id="email" class="form-control" placeholder="Email*"  v-model="email">
+                            <input type="email" name="email" id="CommentEmail" class="form-control" placeholder="Email*"
+                                v-model="email" ref="email">
                         </div>
                     </div>
 
@@ -142,6 +148,7 @@
                     </div>
                 </div>
             </form>
+
         </div>
     </div>
 </template>
@@ -155,11 +162,11 @@
         name: 'blog-view-component',
         data() {
             return {
-                blog: [],
-                commentResponse: [],
+                blog:[],
+                fetchedcomments: [],
                 text: '',
-                name:'',
-                email:''
+                name: '',
+                email: ''
             }
         },
         props: {
@@ -169,16 +176,14 @@
             axios.get('/api/blogs/' + this.id)
                 .then(res => {
                     this.blog = res.data.data;
-                    // console.log(this.blog);
+                    this.getComments(this.id);
                 }).catch(err => {
                     console.log(err)
-                });
-
+                });          
 
         },
 
         mounted() {
-
 
         },
 
@@ -193,18 +198,33 @@
                 comment.name = this.name;
                 comment.email = this.email;
                 comment.blog_id = blog_id;
-                
-               
-                console.log(comment);
 
                 axios.post('http://127.0.0.1:8000/api/comments', comment)
                     .then(res => {
-                        console.log(res.data);
+                        // console.log(res.data);
                     }).catch(err => {
-                    console.log(err.response.data)
-                });
-            
+                        console.log(err.response.data)
+                    });
+
+                this.getComments(this.id);
+                this.resetForm();
             },
+
+            getComments(blog_id) {
+                axios.get('http://127.0.0.1:8000/api/comments/' + blog_id)
+                    .then(res => {
+                        this.fetchedcomments = res.data;
+                    }).catch(err => {
+                        console.log(err.response.data)
+                    });
+            },
+            resetForm()
+            {
+                this.name ='';
+                this.text = '';
+                this.email='';
+
+            }
         }
     }
 
