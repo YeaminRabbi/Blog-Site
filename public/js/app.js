@@ -5452,7 +5452,11 @@ __webpack_require__.r(__webpack_exports__);
   name: 'blog-view-component',
   data: function data() {
     return {
-      blog: []
+      blog: [],
+      commentResponse: [],
+      text: '',
+      name: '',
+      email: ''
     };
   },
   props: {
@@ -5469,7 +5473,21 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {},
   computed: {},
-  methods: {}
+  methods: {
+    addComment: function addComment(blog_id) {
+      var comment = {};
+      comment.text = this.text;
+      comment.name = this.name;
+      comment.email = this.email;
+      comment.blog_id = blog_id;
+      console.log(comment);
+      axios.post('http://127.0.0.1:8000/api/comments', comment).then(function (res) {
+        console.log(res.data);
+      })["catch"](function (err) {
+        console.log(err.response.data);
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -5767,7 +5785,138 @@ var render = function render() {
     domProps: {
       innerHTML: _vm._s(_vm.blog.body)
     }
-  })]), _vm._v(" "), _vm._m(0)])]);
+  })]), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c("div", {
+    staticClass: "widget mb-50"
+  }, [_vm._m(1), _vm._v(" "), _c("ul", {
+    staticClass: "widget-comments"
+  }, [_c("li", {
+    staticClass: "comment-item"
+  }, [_c("img", {
+    attrs: {
+      src: _vm.blog.author_image,
+      alt: ""
+    }
+  }), _vm._v(" "), _vm._m(2)])]), _vm._v(" "), _vm._m(3), _vm._v(" "), _c("form", {
+    staticClass: "widget-form",
+    attrs: {
+      action: "#",
+      method: "POST",
+      id: "main_contact_form"
+    },
+    on: {
+      submit: function submit($event) {
+        $event.preventDefault();
+        return _vm.addComment(_vm.blog.id);
+      }
+    }
+  }, [_c("p", [_vm._v("Your email adress will not be published ,Requied fileds are marked*.")]), _vm._v(" "), _c("div", {
+    staticClass: "alert alert-success contact_msg",
+    staticStyle: {
+      display: "none"
+    },
+    attrs: {
+      role: "alert"
+    }
+  }, [_vm._v("\n                Your message was sent successfully.\n            ")]), _vm._v(" "), _c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-md-12"
+  }, [_c("div", {
+    staticClass: "form-group"
+  }, [_c("textarea", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.text,
+      expression: "text"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      name: "message",
+      id: "message",
+      cols: "30",
+      rows: "5",
+      placeholder: "Message*",
+      required: "required"
+    },
+    domProps: {
+      value: _vm.text
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.text = $event.target.value;
+      }
+    }
+  })])]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-6"
+  }, [_c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.name,
+      expression: "name"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      name: "name",
+      id: "name",
+      placeholder: "Name*",
+      required: "required"
+    },
+    domProps: {
+      value: _vm.name
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.name = $event.target.value;
+      }
+    }
+  })])]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-6"
+  }, [_c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.email,
+      expression: "email"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "email",
+      name: "email",
+      id: "email",
+      placeholder: "Email*"
+    },
+    domProps: {
+      value: _vm.email
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.email = $event.target.value;
+      }
+    }
+  })])]), _vm._v(" "), _c("div", {
+    staticClass: "col-12"
+  }, [_c("button", {
+    staticClass: "btn-custom",
+    attrs: {
+      type: "submit"
+    },
+    on: {
+      click: function click($event) {
+        $event.preventDefault();
+        return _vm.addComment(_vm.blog.id);
+      }
+    }
+  }, [_vm._v("\n                        Post Comment\n                    ")])])])])])]);
 };
 
 var staticRenderFns = [function () {
@@ -5840,6 +5989,31 @@ var staticRenderFns = [function () {
   }, [_c("i", {
     staticClass: "fab fa-pinterest"
   })])])])])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "title"
+  }, [_c("h5", [_vm._v("3 Comments")])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "content"
+  }, [_c("ul", {
+    staticClass: "info list-inline"
+  }, [_c("li", [_vm._v("Mohammed Ali")]), _vm._v(" "), _c("li", {
+    staticClass: "dot"
+  }), _vm._v(" "), _c("li", [_vm._v(" January 15, 2021")])]), _vm._v(" "), _c("p", [_vm._v("Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus at doloremque adipisci\n                        eum placeat\n                        quod non fugiat aliquid sit similique!\n                    ")])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "title"
+  }, [_c("h5", [_vm._v("Leave a Comment")])]);
 }];
 render._withStripped = true;
 

@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CommentController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,4 +20,5 @@ use App\Http\Controllers\BlogController;
 
 
 // Route::post('/blogs', [App\Http\Controllers\BackendController::class, 'store'])->name('blogStore');
-Route::resource('blogs', BlogController::class);
+Route::resource('/blogs', BlogController::class);
+Route::resource('/comments', CommentController::class);
